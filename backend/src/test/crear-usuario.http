@@ -1,0 +1,56 @@
+POST http://localhost:3001/Usuario
+Content-Type: application/json
+
+{
+  "nombredeusuario": "juan123",
+  "password": "mi_contraseña_segura",
+  "nombre": "Juan",
+  "apellido": "Zavalaga",
+  "direccion": "Av. Los Próceres 123",
+  "ciudad": "Lima",
+  "telefono": "987654321"
+}
+
+####
+POST http://localhost:3001/Categoria
+Content-Type: application/json
+
+{
+  "nombre": "Frutas",
+  "descripcion": "Categoría de frutas frescas"
+}
+
+####
+POST http://localhost:3001/producto
+Content-Type: application/json
+
+{
+  "nombre": "Manzanas",
+  "descripcion": "Fruta fresca y dulce",
+  "marca": "Frutas del Valle",
+  "stock": 100,
+  "precio": 2,
+  "imagen": "https://example.com/images/platano.jpg",
+  "idCategoria": 1
+}
+
+####
+POST http://localhost:3001/Carrito/create
+Content-Type: application/json
+
+{
+  "idUsuario": 4
+}
+
+####
+POST http://localhost:3001/Carrito/add-item
+Content-Type: application/json
+
+{
+  "idUsuario": 2,
+  "idProducto": 2,
+  "cantidad": 2
+}
+
+####
+GET http://localhost:3001/Carrito/items/1
