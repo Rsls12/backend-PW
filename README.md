@@ -1,0 +1,1 @@
+Just clone repository, create a local DB in postgress (you can see the name in database-config). Then install dependencies (npm install) and run the API (npm run init --> the first time | npm run dev --> after the first run).
