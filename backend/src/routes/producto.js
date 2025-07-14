@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/', controller.findAllWithCategorias);
 router.get('/:id', controller.findWithCategoria);
 router.post('/', controller.create);
-router.put('/:id', controller.update);
+router.put('/', controller.update);
 router.delete('/:id', controller.remove);
 
 export default router;

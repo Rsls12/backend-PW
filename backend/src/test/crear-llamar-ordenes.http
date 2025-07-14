@@ -14,7 +14,7 @@ Content-Type: application/json
 
 {
   "idOrden": 1,
-  "idProducto": 1,
+  "idProducto": 2,
   "cantidad": 3
 }
 

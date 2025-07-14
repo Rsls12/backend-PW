@@ -2,8 +2,24 @@ POST http://localhost:3001/Usuario
 Content-Type: application/json
 
 {
-  "nombredeusuario": "juan123",
-  "password": "mi_contraseña_segura",
+  "nombredeusuario": "admin",
+  "password": "admin",
+  "nombre": "adminProducto",
+  "apellido": "adminApellido",
+  "direccion": "Edificio Torre II",
+  "ciudad": "Lima",
+  "telefono": "987654321",
+  "isAdmin": true
+}
+
+####
+
+POST http://localhost:3001/Usuario
+Content-Type: application/json
+
+{
+  "nombredeusuario": "juansho",
+  "password": "1234",
   "nombre": "Juan",
   "apellido": "Zavalaga",
   "direccion": "Av. Los Próceres 123",
@@ -16,8 +32,8 @@ POST http://localhost:3001/Categoria
 Content-Type: application/json
 
 {
-  "nombre": "Frutas",
-  "descripcion": "Categoría de frutas frescas"
+  "nombre": "Pescados",
+  "descripcion": "Categoría de pescados frescos"
 }
 
 ####
@@ -25,21 +41,25 @@ POST http://localhost:3001/producto
 Content-Type: application/json
 
 {
-  "nombre": "Manzanas",
-  "descripcion": "Fruta fresca y dulce",
+  "nombre": "Mandarinas",
+  "descripcion": "Fruta fresca y deliciosa",
   "marca": "Frutas del Valle",
   "stock": 100,
   "precio": 2,
-  "imagen": "https://example.com/images/platano.jpg",
+  "imagen": "https://example.com/images/mandarinas.jpg",
   "idCategoria": 1
 }
+
+####
+
+GET http://localhost:3001/producto/
 
 ####
 POST http://localhost:3001/Carrito/create
 Content-Type: application/json
 
 {
-  "idUsuario": 4
+  "idUsuario": 2
 }
 
 ####
@@ -48,9 +68,9 @@ Content-Type: application/json
 
 {
   "idUsuario": 2,
-  "idProducto": 2,
-  "cantidad": 2
+  "idProducto": 1,
+  "cantidad": 3
 }
 
 ####
-GET http://localhost:3001/Carrito/items/1
+GET http://localhost:3001/Carrito/items/2

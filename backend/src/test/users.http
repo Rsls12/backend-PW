@@ -40,4 +40,4 @@ Content-Type: application/json
 }
 
 ###
-GET  http://localhost:3001/Usuario/byEmail?email=jazavalagaf@gmail.com
+GET  http://localhost:3001/Usuario/byEmail?email=juan123

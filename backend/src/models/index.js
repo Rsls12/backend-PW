@@ -22,7 +22,7 @@ Orden.belongsToMany(Producto, { through: ItemDeLaOrden, foreignKey: 'idOrden' })
 Producto.belongsToMany(Orden, { through: ItemDeLaOrden, foreignKey: 'idProducto' });
 
 // Orden 1 - N
-Producto.hasOne(Categoria, { foreignKey: 'idCategoria' });
+Producto.belongsTo(Categoria, { foreignKey: 'idCategoria' });
 Categoria.hasMany(Producto, { foreignKey: 'idCategoria' });
 
 export {
