@@ -14,6 +14,10 @@ const model = sequelize.define('categoria', {
   descripcion: {
     type: DataTypes.STRING,
     allowNull: false
+  },
+  imagen: {
+    type: DataTypes.STRING,
+    allowNull: false
   }
 });
 

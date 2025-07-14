@@ -32,8 +32,8 @@ POST http://localhost:3001/Categoria
 Content-Type: application/json
 
 {
-  "nombre": "Pescados",
-  "descripcion": "Categoría de pescados frescos"
+  "nombre": "Frutas",
+  "descripcion": "Categoría de frutas frescas"
 }
 
 ####
@@ -41,12 +41,12 @@ POST http://localhost:3001/producto
 Content-Type: application/json
 
 {
-  "nombre": "Mandarinas",
+  "nombre": "Salmón",
   "descripcion": "Fruta fresca y deliciosa",
   "marca": "Frutas del Valle",
   "stock": 100,
   "precio": 2,
-  "imagen": "https://example.com/images/mandarinas.jpg",
+  "imagen": "https://example.com/images/salmon.jpg",
   "idCategoria": 1
 }
 
@@ -68,7 +68,7 @@ Content-Type: application/json
 
 {
   "idUsuario": 2,
-  "idProducto": 1,
+  "idProducto": 2,
   "cantidad": 3
 }
 
