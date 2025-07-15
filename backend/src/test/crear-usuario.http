@@ -18,11 +18,11 @@ POST http://localhost:3001/Usuario
 Content-Type: application/json
 
 {
-  "nombredeusuario": "juansho",
+  "nombredeusuario": "AntoniPro",
   "password": "1234",
-  "nombre": "Juan",
-  "apellido": "Zavalaga",
-  "direccion": "Av. Los Próceres 123",
+  "nombre": "Anthony",
+  "apellido": "Gonzales",
+  "direccion": "Av. Radacuda 456",
   "ciudad": "Lima",
   "telefono": "987654321"
 }
@@ -32,8 +32,9 @@ POST http://localhost:3001/Categoria
 Content-Type: application/json
 
 {
-  "nombre": "Frutas",
-  "descripcion": "Categoría de frutas frescas"
+  "nombre": "Pescados",
+  "descripcion": "Categoría de pescados frescos",
+  "imagen": "https://example.com/images/pescados.jpg"
 }
 
 ####
@@ -41,13 +42,13 @@ POST http://localhost:3001/producto
 Content-Type: application/json
 
 {
-  "nombre": "Salmón",
-  "descripcion": "Fruta fresca y deliciosa",
-  "marca": "Frutas del Valle",
+  "nombre": "Bonito",
+  "descripcion": "Pescado fresco y delicioso",
+  "marca": "Pescados del Valle",
   "stock": 100,
   "precio": 2,
-  "imagen": "https://example.com/images/salmon.jpg",
-  "idCategoria": 1
+  "imagen": "https://example.com/images/bonito.jpg",
+  "idCategoria": 2
 }
 
 ####
@@ -68,7 +69,7 @@ Content-Type: application/json
 
 {
   "idUsuario": 2,
-  "idProducto": 2,
+  "idProducto": 3,
   "cantidad": 3
 }
 

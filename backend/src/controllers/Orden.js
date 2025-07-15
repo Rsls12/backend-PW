@@ -1,3 +1,4 @@
+import { where } from 'sequelize';
 import Orden from '../repositories/Orden.js';
 import Categorias from '../repositories/categoria.js';
 import productos from '../repositories/producto.js';
@@ -22,11 +23,20 @@ const addItemToOrden = async (req, res) => {
   }
 };
 
+const findAllOrdenes = async (req, res) => {
+  try {
+    const ordenes = await Orden.findAll();
+    res.json(ordenes);
+  } catch (err) {
+    res.status(500).json({ mensaje: 'Error al obtener las órdenes', error: err.message });
+  }
+};
+
 const getItemsFromOrden = async (req, res) => {
   const { idUsuario } = req.params;
 
   try {
-    const ordenes = await Orden.findAll({ where: { idUsuario } });
+    const ordenes = await Orden.findAllByUsuario(idUsuario);
     const ordenesConProductos = [];
 
     for (const orden of ordenes) {
@@ -62,4 +72,4 @@ const getItemsFromOrden = async (req, res) => {
 };
 
 
-export default { crearOrden, addItemToOrden, getItemsFromOrden };
+export default { crearOrden, addItemToOrden, getItemsFromOrden, findAllOrdenes };

@@ -42,7 +42,11 @@ async addProducto(idOrden, idProducto, cantidad) {
 }
 
   async getProductosByOrden(idOrden) {
-    return await ItemDeLaOrden.findAll({ where: { idOrden } });
+    return await ItemDeLaOrden.findAllByOrden(idOrden);
+  }
+
+  async findAllByUsuario(idUsuario) {
+    return await this.model.findAll({ where: { idUsuario } });
   }
 
 }

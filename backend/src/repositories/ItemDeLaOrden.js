@@ -9,6 +9,10 @@ class ItemDeLaOrdenRepository extends RepositoryBase {
   async addProducto(idOrden, idProducto, cantidad) {
     return await this.model.create({ idOrden, idProducto, cantidad });
   }
+
+  async findAllByOrden(idOrden) {
+    return await this.model.findAll({ where: { idOrden } });
+  }
 }
 
 export default new ItemDeLaOrdenRepository();
