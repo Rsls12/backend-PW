@@ -1,4 +1,5 @@
 import repository from '../repositories/producto.js';
+import Producto from '../models/producto.js';
 
 const sendResults = (result, res) => {
   if (result) {
@@ -20,9 +21,38 @@ const findOne = async (req, res) => {
 };
 
 const create = async (req, res) => {
-  const payload = req.body;
-  const result = await repository.create(payload);
-  return sendResults(result, res);
+  try {
+    const {
+      name,
+      presentation,
+      category,
+      description,
+      stock,
+      image
+    } = req.body;
+
+    let imagen = null;
+
+    if (req.file) {
+      // Construye la URL completa de la imagen
+      imagen = `http://localhost:3001/uploads/${req.file.filename}`;
+    }
+
+    const nuevoProducto = await Producto.create({
+      nombre: name,
+      idCategoria: category,
+      descripcion: description,
+      stock: stock,
+      imagen: imagen,
+      marca: "Productos genéricos SAC",
+      precio: 5
+    });
+
+    res.status(201).json(nuevoProducto);
+  } catch (error) {
+    console.error("Error en create producto:", error);
+    res.status(500).json({ error: "Error al crear el producto" });
+  }
 };
 
 const update = async (req, res) => {
